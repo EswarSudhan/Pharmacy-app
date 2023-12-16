@@ -1,34 +1,34 @@
 export const popularProducts = [
     {
       id:1,
-      img:"https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png",
+      img:"https://imgd.aeplcdn.com/300x225/cw/ucp/s2789117/nissan-sunny-xvdiesel-638307489948878503.jpg",
     },
     {
       id:2,
-      img:"https://cdn.shopify.com/s/files/1/0101/4832/products/Angela_Natural_Tee.png?v=1606780388",
+      img:"https://www.carandbike.com/_next/image?url=https%3A%2F%2Fmedia.mahindrafirstchoice.com%2Flive_web_images%2Fusedcarsimg%2Fmfc%2F4282%2F577845%2Fcover_image-20230718105549.jpg&w=3840&q=75",
     },
     {
       id:3,
-      img:"https://www.prada.com/content/dam/pradanux_products/U/UCS/UCS319/1YOTF010O/UCS319_1YOT_F010O_S_182_SLF.png",
+      img:"https://img-in-2.trovit.com/1c1O7FAh1Wj/1c1O7FAh1Wj.1_11.jpg",
     },
     {
       id:4,
-      img:"https://www.burdastyle.com/pub/media/catalog/product/cache/7bd3727382ce0a860b68816435d76e26/107/BUS-PAT-BURTE-1320516/1170x1470_BS_2016_05_132_front.png",
+      img:"https://www.carandbike.com/_next/image?url=https%3A%2F%2Fmedia.mahindrafirstchoice.com%2Flive_web_images%2Fusedcarsimg%2Fmfc%2F620%2F596930%2Fcover_image-20231208165224.jpg&w=3840&q=75",
     },
     {
       id:5,
-      img:"https://images.ctfassets.net/5gvckmvm9289/3BlDoZxSSjqAvv1jBJP7TH/65f9a95484117730ace42abf64e89572/Noissue-x-Creatsy-Tote-Bag-Mockup-Bundle-_4_-2.png",
+      img:"https://img.gaadibazaar.in/uv-images/1892689/conversions/5e724827-3d07-4a0a-90a7-36ec3859dca5-vdp.webp",
     },
     {
       id:6,
-      img:"https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png",
+      img:"https://img-in-2.trovit.com/MF131C1H1f1q16/MF131C1H1f1q16.1_11.jpg",
     },
     {
       id:7,
-      img:"https://www.vintageindustries.nl/download_front/qympzk1762/2217_Arrow_Jacket_Forest.png",
+      img:"https://img-in-2.trovit.com/1w1B_dzaR1u/1w1B_dzaR1u.1_11.jpg",
     },
     {
       id:8,
-      img:"https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png",
+      img:"https://content.jdmagicbox.com/comp/nagercoil/q6/9999p4652.4652.181019154010.s1q6/catalogue/mm-cars-chetti-kulam-nagercoil-second-hand-car-dealers-1tupyylsgc.jpeg",
     },
   ]

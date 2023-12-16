@@ -3,20 +3,20 @@ import styled from "styled-components";
 import { mobile } from "../responsive";
 
 const Container = styled.div`
-  height: 60vh;git
-  background-color: #fcf5f5;
+  height: 60vh;
+  background-color: #fef1f1;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 `;
 const Title = styled.h1`
-  font-size: 20px;
+  font-size: 70px;
   margin-bottom: 20px;
 `;
 
 const Desc = styled.div`
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 300;
   margin-bottom: 20px;
   ${mobile({ textAlign: "center" })}
@@ -44,14 +44,13 @@ const Button = styled.button`
   border: none;
   background-color: teal;
   color: white;
-  cursor: pointer;
 `;
 
 const Feedback = () => {
   return (
     <Container>
       <Title>Feedback</Title>
-      <Desc>Please type your feedback.</Desc>
+      <Desc>type your feedback.</Desc>
       <InputContainer>
         <Input placeholder="write" />
         <Button>

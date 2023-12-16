@@ -12,7 +12,7 @@ const Container = styled.div`
    `
 const Announcement = () => {
   return (
-    <Container>   Shipping cost discount upto 25%</Container>
+    <Container>   </Container>
   )
 }
 

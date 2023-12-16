@@ -1,17 +1,21 @@
-import React from 'react'
-import { Navbar } from '../components/Navbar'
-import Announcement from '../components/Announcement'
-import Product from '../components/Product'
-import Products from '../components/Products'
-import Feedback from '../components/Feedback'
+import React from "react";
+import Announcement from "../components/Announcement";
+//import Categories from "../components/Categories";
+//import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import Products from "../components/Products";
+//import Slider from "../components/Slider";
+import Feedback from "../components/Feedback";
 
-export const Home = () => {
+const Home = () => {
   return (
     <div>
-        <Announcement/>
-        <Navbar/>
-        <Products/>
-        <Feedback/>
+      <Announcement />
+      <Navbar />
+      <Products/>
+      <Feedback/>
     </div>
-  )
-}
+  );
+};
+
+export default Home;

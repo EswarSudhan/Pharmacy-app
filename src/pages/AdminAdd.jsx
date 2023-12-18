@@ -50,19 +50,21 @@ const Agreement = styled.span`
 const Button = styled.button`
   width: 40%;
   border: none;
-  padding: 15px 20px;
+  padding: 7px 14px;
   background-color: teal;
   color: white;
   cursor: pointer;
+  margin: 20px 10px 0px 0px
 `;
 
-function Register(){
-  const [name,setName]=useState()
-  const [email,setEmail]=useState()
-  const [password,setPassword]=useState()
+function AdminAdd(){
+  const [title,setTitle]=useState()
+  const [desc,setDescription]=useState()
+  const [img,setImage]=useState()
+  const [price,setPrice]=useState()
   const handleSubmit=(e)=>{
     e.preventDefault()
-    axios.post("http://localhost:5000/api/register",{username:name,email:email,password:password})
+    axios.post("http://localhost:5000/api/products",{title:title,desc:desc,img:img,price:price})
     .then(result=>console.log(result))
     .catch(err=>console.log(err))
   }
@@ -73,16 +75,14 @@ function Register(){
 return (
     <Container>
       <Wrapper>
-        <Title>CREATE AN ACCOUNT</Title>
+        <Title>CREATE PRODUCT</Title>
         <Form onSubmit={handleSubmit}>
-          <Input placeholder="name"  onChange={(e)=>setName(e.target.value)}/> 
-          <Input placeholder="email" onChange={(e)=>setEmail(e.target.value)}/>
-          <Input placeholder="password" onChange={(e)=>setPassword(e.target.value)}/>
+          <Input placeholder="name"  onChange={(e)=>setTitle(e.target.value)}/> 
+          <Input placeholder="description" onChange={(e)=>setDescription(e.target.value)}/>
+          <Input placeholder="Image link" onChange={(e)=>setImage(e.target.value)}/>
+          <Input placeholder="price" onChange={(e)=>setPrice(e.target.value)}/>
           
-          <Agreement>
-            By creating an account, I consent to the processing of my personal
-            data in accordance with the <b>PRIVACY POLICY</b>
-          </Agreement>
+        
           <Button>CREATE</Button>
         </Form>
       </Wrapper>
@@ -90,4 +90,4 @@ return (
   );
 }
 
-export default Register;
+export default AdminAdd;

@@ -14,6 +14,9 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import Success from "./pages/Success";
 import { useSelector } from "react-redux";
 
+import Checkout from "./pages/Checkout";
+import AdminAdd from "./pages/AdminAdd";
+
 const App = () => {
   const user = useSelector((state) => state.user.currentUser);
 
@@ -24,7 +27,11 @@ const App = () => {
         <Route path="/products" element={<ProductList />} />
         <Route path="/product/:id" element={<Product />} />
          
+        
         <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
+        {/* Add other routes as needed */}
+      
         
         <Route path="/success" element={<Success />} />
         <Route
@@ -34,6 +41,10 @@ const App = () => {
         <Route
           path="/register"
           element={user ? <Navigate to="/" /> : <Register />}
+        />
+        <Route
+          path="/adminadd"
+          element={user ? <Navigate to="/" /> : <AdminAdd />}
         />
       </Routes>
     </Router>

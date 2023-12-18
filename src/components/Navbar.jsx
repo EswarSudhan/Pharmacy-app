@@ -65,7 +65,8 @@ const Right = styled.div`
 const MenuItem = styled.div`
   font-size: 14px;
   cursor: pointer;
-  margin-left: 25px;
+  margin-left: 15px;
+  color: teal;
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 const Icon = styled.div`
@@ -84,6 +85,7 @@ const Icon = styled.div`
   }
 `;
 
+
 const Navbar = () => {
   const quantity = useSelector(state=>state.cart.quantity)
   return (
@@ -100,8 +102,16 @@ const Navbar = () => {
           <Logo>Pharmacy</Logo>
         </Center>
         <Right>
+        <Link to="http://localhost:8501/">
+          <MenuItem>CHATBOT</MenuItem>
+          </Link>
+          
+        <Link to="/register">
           <MenuItem>REGISTER</MenuItem>
+          </Link>
+          <Link to="/login">
           <MenuItem>SIGN IN</MenuItem>
+          </Link>
           <Link to="/cart">
           <MenuItem>
           <Icon>

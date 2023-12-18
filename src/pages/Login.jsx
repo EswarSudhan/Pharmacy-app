@@ -3,6 +3,9 @@ import styled from "styled-components";
 import { login } from "../redux/apiCalls.js";
 import { mobile } from "../responsive";
 import { useDispatch, useSelector } from "react-redux";
+import {Link} from "react-router-dom"
+import axios from "axios"
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   width: 100vw;
@@ -47,7 +50,7 @@ const Button = styled.button`
   width: 40%;
   border: none;
   padding: 15px 20px;
-  background-color: teal;
+  background-color: teal ;
   color: white;
   cursor: pointer;
   margin-bottom: 10px;
@@ -57,47 +60,47 @@ const Button = styled.button`
   }
 `;
 
-const Link = styled.a`
-  margin: 5px 0px;
-  font-size: 12px;
-  text-decoration: underline;
-  cursor: pointer;
-`;
+
 
 const Error = styled.span`
   color: red;
 `;
 
-const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const dispatch = useDispatch();
-  const { isFetching, error } = useSelector((state) => state.user);
+function Login(){
+  const [username,setName]=useState()
+  const [password,setPassword]=useState()
+  const navigate=useNavigate()
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    login(dispatch, { username, password });
-  };
+  const handleSubmit=(e)=>{
+    e.preventDefault()
+    axios.post("http://localhost:5000/api/login",{username:username,password:password})
+    .then(result=>{console.log(result) 
+      if(result.data==="Success"){
+    navigate('/products')
+      }
+  
+  })
+    .catch(err=>console.log(err))
+  }
   return (
     <Container>
       <Wrapper>
         <Title>SIGN IN</Title>
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <Input
             placeholder="username"
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={(e) => setName(e.target.value)}
           />
           <Input
             placeholder="password"
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button onClick={handleClick} disabled={isFetching}>
+          <Button >
             LOGIN
           </Button>
-          {error && <Error>Something went wrong...</Error>}
-          <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
-          <Link>CREATE A NEW ACCOUNT</Link>
+          <Link to = "/register"><Button>REGISTER</Button></Link>
+          
         </Form>
       </Wrapper>
     </Container>

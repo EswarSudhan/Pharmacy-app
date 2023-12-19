@@ -69,6 +69,18 @@ function AdminAdd(){
     .catch(err=>console.log(err))
   }
 
+  const handleDelete = (title) => {
+    axios
+      .delete(`http://localhost:5000/api/products/delete/${title}`)
+      .then((result) => {
+        console.log(result.data);
+        // Handle successful deletion, if needed
+      })
+      .catch((err) => {
+        console.error("Error deleting product:", err);
+        // Handle deletion error, if needed
+      });
+  };
 
 
 
@@ -86,7 +98,19 @@ return (
           <Button>CREATE</Button>
         </Form>
       </Wrapper>
-    </Container>
+    
+
+   
+    <Wrapper>
+  <Title>Delete PRODUCT</Title>
+  <Form onSubmit={handleDelete}>
+    <Input placeholder="name"  onChange={(e)=>setTitle(e.target.value)}/> 
+    
+  
+    <Button>DELETE</Button>
+  </Form>
+</Wrapper>
+</Container>
   );
 }
 

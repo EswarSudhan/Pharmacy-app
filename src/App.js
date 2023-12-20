@@ -34,18 +34,10 @@ const App = () => {
       
         
         <Route path="/success" element={<Success />} />
-        <Route
-          path="/login"
-          element={user ? <Navigate to="/" /> : <Login />}
-        />
-        <Route
-          path="/register"
-          element={user ? <Navigate to="/" /> : <Register />}
-        />
-        <Route
-          path="/adminadd"
-          element={user ? <Navigate to="/" /> : <AdminAdd />}
-        />
+        <Route path="/login" element={<Login />} />
+<Route path="/register" element={<Register />} />
+<Route path="/adminadd" element={<AdminAdd />} />
+
       </Routes>
     </Router>
   );

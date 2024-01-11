@@ -16,6 +16,9 @@ import { useSelector } from "react-redux";
 
 import Checkout from "./pages/Checkout";
 import AdminAdd from "./pages/AdminAdd";
+import AdminLogin from "./pages/AdminLogin";
+import RetailerLogin from "./pages/RetailerLogin";
+import RetailerHome from "./pages/RetailerHome";
 
 const App = () => {
   const user = useSelector((state) => state.user.currentUser);
@@ -37,6 +40,9 @@ const App = () => {
         <Route path="/login" element={<Login />} />
 <Route path="/register" element={<Register />} />
 <Route path="/adminadd" element={<AdminAdd />} />
+<Route path="/adminlogin" element={<AdminLogin />} />
+<Route path="/retailerlogin" element={<RetailerLogin />} />
+<Route path="/retailerhome" element={<RetailerHome />} />
 
       </Routes>
     </Router>

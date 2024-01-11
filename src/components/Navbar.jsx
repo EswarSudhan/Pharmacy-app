@@ -52,6 +52,7 @@ const Center = styled.div`
 
 const Logo = styled.h1`
   font-weight: bold;
+  color:teal;
   ${mobile({ fontSize: "24px" })}
 `;
 const Right = styled.div`
@@ -99,7 +100,7 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>Pharmacy</Logo>
+          <Logo>PHARMACY APP</Logo>
         </Center>
         <Right>
         <Link to="http://localhost:8501/">

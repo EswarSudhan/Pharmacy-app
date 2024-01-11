@@ -190,7 +190,7 @@ const Cart = () => {
 
 return (
   <Container>
-    <Navbar />
+    
     <Announcement />
     <Wrapper>
       <Title>YOUR BAG</Title>
@@ -239,6 +239,7 @@ return (
       </PriceDetail>
     </Product>
   ))}
+
   <Hr />
 </Info>
         <Summary>
@@ -249,8 +250,8 @@ return (
           </SummaryItem>
           {/* Additional summary items can be added here */}
           <StripeCheckout
-            name="Lama Shop"
-            image="https://avatars.githubusercontent.com/u/1486366?v=4"
+            name="Pharmacy"
+            image=""
             billingAddress
             shippingAddress
             description={`Your total is $${cart.total}`}

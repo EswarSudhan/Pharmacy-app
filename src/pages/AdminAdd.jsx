@@ -10,7 +10,7 @@ const Container = styled.div`
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
     ),
-    url("https://images.pexels.com/photos/6984661/pexels-photo-6984661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+    url("https://img.freepik.com/premium-photo/texture-craft-white-light-blue-paper-background-half-two-colors-macro-structure-vintage-cerulean-cardboard_113767-5918.jpg?size=626&ext=jpg")
       center;
   background-size: cover;
   display: flex;
@@ -19,10 +19,11 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  width: 40%;
+  width: 20%;
   padding: 20px;
-  background-color: white;
-  ${mobile({ width: "75%" })}
+  
+  ${mobile({ width: "25%" })}
+  
 `;
 
 const Title = styled.h1`
@@ -62,18 +63,36 @@ function AdminAdd(){
   const [desc,setDescription]=useState()
   const [img,setImage]=useState()
   const [price,setPrice]=useState()
+  const [name,setName]=useState()
+  const [email,setEmail]=useState()
+  const [password,setPassword]=useState()
+  const [deleteUsername, setDeleteUsername] = useState("");
+  const [loginResult, setLoginResult] = useState("");
+
+
+  const handlRetailer=(e)=>{
+    e.preventDefault()
+    axios.post("http://localhost:5000/api/register",{username:name,email:email,password:password,isRetailer:true})
+    .then(result=>{console.log(result);
+           setLoginResult(result.data);})
+    .catch(err=>console.log(err))
+  }
   const handleSubmit=(e)=>{
     e.preventDefault()
     axios.post("http://localhost:5000/api/products",{title:title,desc:desc,img:img,price:price})
-    .then(result=>console.log(result))
+    .then(result=>{console.log(result);
+    setLoginResult(result.data);})
     .catch(err=>console.log(err))
   }
 
-  const handleDelete = (title) => {
+  const handleDelete = (e) => {
+    e.preventDefault()
     axios
       .delete(`http://localhost:5000/api/products/delete/${title}`)
       .then((result) => {
         console.log(result.data);
+        
+           setLoginResult(result.data);
         // Handle successful deletion, if needed
       })
       .catch((err) => {
@@ -81,6 +100,24 @@ function AdminAdd(){
         // Handle deletion error, if needed
       });
   };
+
+
+  const handleDeleteUser = (e) => {
+    e.preventDefault();
+    axios
+      .delete(`http://localhost:5000/api/users/delete/${deleteUsername}`)
+      .then((result) => {
+        console.log(result.data);
+        
+           setLoginResult(result.data);
+        // Handle successful deletion, if needed
+      })
+      .catch((err) => {
+        console.error("Error deleting user:", err);
+        // Handle deletion error, if needed
+      });
+  };
+  
 
 
 
@@ -96,20 +133,54 @@ return (
           
         
           <Button>CREATE</Button>
+          <div>{loginResult}</div>
         </Form>
       </Wrapper>
     
 
    
     <Wrapper>
-  <Title>Delete PRODUCT</Title>
+  <Title>DELETE PRODUCT</Title>
   <Form onSubmit={handleDelete}>
     <Input placeholder="name"  onChange={(e)=>setTitle(e.target.value)}/> 
     
   
     <Button>DELETE</Button>
+    <div>{loginResult}</div>
   </Form>
 </Wrapper>
+
+<Wrapper>
+        <Title>CREATE AN ACCOUNT</Title>
+        <Form onSubmit={handlRetailer}>
+          <Input placeholder="name"  onChange={(e)=>setName(e.target.value)}/> 
+          <Input placeholder="email" onChange={(e)=>setEmail(e.target.value)}/>
+          <Input placeholder="code" onChange={(e)=>setPassword(e.target.value)}/>
+          
+          <Agreement>
+            By creating an account, I consent to the processing of my personal
+            data in accordance with the <b>PRIVACY POLICY</b>
+          </Agreement>
+          <Button>CREATE</Button>
+          <div>{loginResult}</div>
+        </Form>
+      </Wrapper>
+
+      <Wrapper>
+        <Title>DELETE RETAILER</Title>
+        <Form onSubmit={handleDeleteUser}>
+          <Input
+            placeholder="name"
+            onChange={(e) => setDeleteUsername(e.target.value)}
+          />
+          <Agreement>
+            By creating an account, I consent to the processing of my personal
+            data in accordance with the <b>PRIVACY POLICY</b>
+          </Agreement>
+          <Button>DELETE</Button>
+          <div>{loginResult}</div>
+        </Form>
+      </Wrapper>
 </Container>
   );
 }

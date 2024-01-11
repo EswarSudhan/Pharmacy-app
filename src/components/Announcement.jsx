@@ -12,7 +12,7 @@ const Container = styled.div`
    `
 const Announcement = () => {
   return (
-    <Container>   </Container>
+    <Container> FSD and SDE Project Presentation  </Container>
   )
 }
 

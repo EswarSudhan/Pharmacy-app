@@ -78,7 +78,7 @@ function AdminAdd(){
     .catch(err=>console.log(err))
   }
 
-  
+  {}
   const handleSubmit=(e)=>{
     e.preventDefault()
     axios.post("http://localhost:5000/api/products",{title:title,desc:desc,img:img,price:price})
